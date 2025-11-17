@@ -1,8 +1,6 @@
 from fastapi import FastAPI
+from enum import Enum
+from posts.router import router
 
 app = FastAPI()
-
-@app.get("/")
-def hello():
-    return {"message": "Hello FastAPI"}
-
+app.include_router(router)
