@@ -6,4 +6,9 @@ class PostBase(BaseModel):
 
 
 class PostCreate(PostBase):
+    pass
+
+
+class PostPublic(PostBase):
+    id: str | None = 'id'
     created_at : str = set_current_date()
