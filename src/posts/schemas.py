@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from utils import set_current_date
+from src.utils import set_current_date
 
 class PostBase(BaseModel):
     text : str
