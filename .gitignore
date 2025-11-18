@@ -366,3 +366,4 @@ FodyWeavers.xsd
 venv/
 personal-daily-feed.pyproj
 personal-daily-feed.sln
+/logic.txt
