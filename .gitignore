@@ -367,3 +367,4 @@ venv/
 personal-daily-feed.pyproj
 personal-daily-feed.sln
 /logic.txt
+/src/.env
