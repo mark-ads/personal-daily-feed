@@ -1,7 +1,14 @@
 import pytest
 
 @pytest.mark.asyncio
-async def test_create_post(client, admin_token, created_post):
+async def test_create_post(client, created_post, user_token):
+    post_data = {'text': 'User trying to post text'}
+    response = await client.post('/api/v1/posts/', json=post_data, headers=user_token)
+    assert response.status_code == 403
+    assert response.json()['detail'] == 'User is not admin'
+    response = await client.post('/api/v1/posts/', json=post_data)
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Not authenticated'
     assert created_post.status_code == 200
     data = created_post.json()
     assert isinstance(data, dict)
