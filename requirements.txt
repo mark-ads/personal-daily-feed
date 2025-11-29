@@ -1,6 +1,8 @@
 bcrypt==4.0.1
 passlib[bcrypt]
 python-jose[cryptography]
+fastapi==0.121.2
 fastapi[standard]
 psycopg[binary]
 sqlmodel
+pydantic-settings==2.12.0
